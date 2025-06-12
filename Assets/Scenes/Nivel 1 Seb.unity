@@ -1028,7 +1028,7 @@ SpriteRenderer:
   m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.28913894, g: 0.5283019, b: 0.0473478, a: 1}
+  m_Color: {r: 0.25909045, g: 0.4764151, b: 0.0382031, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1312,9 +1312,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: 01d79f07932c5d84c95dc8c82b90fb27, type: 3}
     - target: {fileID: 7755468785856644339, guid: 59d5b77c97b305b4fb511a4d64ea009a, type: 3}
+      propertyPath: audioJump
+      value: 
+      objectReference: {fileID: 8300000, guid: 01d79f07932c5d84c95dc8c82b90fb27, type: 3}
+    - target: {fileID: 7755468785856644339, guid: 59d5b77c97b305b4fb511a4d64ea009a, type: 3}
       propertyPath: firePoint
       value: 
       objectReference: {fileID: 641763331}
+    - target: {fileID: 7755468785856644339, guid: 59d5b77c97b305b4fb511a4d64ea009a, type: 3}
+      propertyPath: audioDisparo
+      value: 
+      objectReference: {fileID: 8300000, guid: 2d6f212c566df6c40b4d7e8a739c5223, type: 3}
     - target: {fileID: 7755468785856644339, guid: 59d5b77c97b305b4fb511a4d64ea009a, type: 3}
       propertyPath: bulletPrefab
       value: 
