@@ -7,7 +7,8 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
     private GameObject player;
-    private GameObject gameOverPanel;
+    public GameObject gameOverPanel;
+    public GameObject startPanel;
 
     [Header("UI")]
     public TextMeshProUGUI vidaText;
@@ -33,7 +34,6 @@ public class GameManager : MonoBehaviour
 
     private void Start ()
     {
-        gameOverPanel = GameObject.Find("Game Over Panel");
         vidaActual = vidaInicial;
         puntajeActual = 0;
         ActualizarUI();
@@ -84,6 +84,11 @@ public class GameManager : MonoBehaviour
         ReiniciarJuego();
     }
 
+    public void IniciarJuego ()
+    {
+        startPanel.SetActive(false);
+    }
+
     public void ReiniciarJuego ()
     {
         // Reiniciar el juego, por ejemplo, recargando la escena actual
@@ -95,4 +100,6 @@ public class GameManager : MonoBehaviour
     {
         Application.Quit();
     }
+
+
 }
