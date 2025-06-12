@@ -24,4 +24,4 @@ Tu misión: llegar hasta las oficinas de Google enfrentándote a enemigos digita
 Este proyecto está en desarrollo. Si tienes ideas, memes, sugerencias o encuentras bugs, eres bienvenido a colaborar con issues o pull requests.
 
 ❤️ Créditos
-Creado con mucho cariño y algo de nostalgia por 𝗔𝗻̃𝗮 𝗣𝗲𝗻̃𝗮, 𝗦𝗲𝗯𝗮𝘀𝘁𝗶𝗮𝗻 𝗖𝗹𝗮𝘃𝗶𝗷𝗼, 𝗗𝗮𝘃𝗶𝗱 𝗣𝗲́𝗿𝗲𝘇, 𝗖𝗵𝗿𝗶𝘀𝘁𝗶𝗮𝗻 𝗚𝗮𝗿𝗰𝗶́𝗮 𝘆 𝗘𝗱𝗺𝘂𝗻𝗱𝗼 𝗥𝗮𝗯𝗲𝗹𝗼.
+Creado con mucho cariño y algo de nostalgia por nuestra primer GameJam: 𝗔𝗻̃𝗮 𝗣𝗲𝗻̃𝗮, 𝗦𝗲𝗯𝗮𝘀𝘁𝗶𝗮𝗻 𝗖𝗹𝗮𝘃𝗶𝗷𝗼, 𝗗𝗮𝘃𝗶𝗱 𝗣𝗲́𝗿𝗲𝘇, 𝗖𝗵𝗿𝗶𝘀𝘁𝗶𝗮𝗻 𝗚𝗮𝗿𝗰𝗶́𝗮 𝘆 𝗘𝗱𝗺𝘂𝗻𝗱𝗼 𝗥𝗮𝗯𝗲𝗹𝗼.
