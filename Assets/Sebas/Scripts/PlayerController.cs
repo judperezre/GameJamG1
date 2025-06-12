@@ -27,11 +27,15 @@ public class PlayerController : MonoBehaviour
     [Header("Audio")]
     [SerializeField] private AudioClip audioJump;
     [SerializeField] private AudioClip audioDisparo;
+    [SerializeField] private AudioClip audioPoweup;
+    [SerializeField] private AudioClip audioDaño;
 
     [Header("Limite de Pantalla")]
     [SerializeField] private float minX, maxX, minY, maxY;
 
     [Header("Powerup")]
+    [SerializeField] private GameObject[] playerPrefabs;
+    [SerializeField] private Transform respawnPoint;
     [SerializeField] private GameObject powerup;
 
     private AudioSource audioSource;
@@ -47,6 +51,9 @@ public class PlayerController : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         rb = GetComponent<Rigidbody2D>();
         rb.interpolation = RigidbodyInterpolation2D.Interpolate;
+
+
+        respawnPoint = transform; // para mantener la posición actual
     }
 
     void Update ()
@@ -118,42 +125,45 @@ public class PlayerController : MonoBehaviour
     void Disparar ()
     {
         Vector3 offset = facingRight ? Vector3.right * offsetBullet : Vector3.left * offsetBullet;
-        if (nivel == 1) {
-            if (Input.GetKeyDown(KeyCode.Space) && fireCooldownTimer <= 0f)
-            {
-                audioSource.PlayOneShot(audioDisparo);
-                GameObject bullet = Instantiate(bulletPrefab[0], firePoint.position + offset, Quaternion.identity);
-                BulletScript bulletScript = bullet.GetComponent<BulletScript>();
-                bulletScript.SetDirection(facingRight ? Vector2.right : Vector2.left, bulletSpeed);
-                bulletScript.SetScreenLimits(minX, maxX, minY, maxY); // <-- NUEVO
-            }
-        }
-
-        if (nivel == 2)
+        
+        if (Input.GetKeyDown(KeyCode.Space) && fireCooldownTimer <= 0f)
         {
-            if (Input.GetKeyDown(KeyCode.Space) && fireCooldownTimer <= 0f)
+            audioSource.PlayOneShot(audioDisparo);
+            GameObject bullet;
+            BulletScript bulletScript;
+
+            if (nivel == 1)
             {
-                audioSource.PlayOneShot(audioDisparo);
-                GameObject bullet = Instantiate(bulletPrefab[1], firePoint.position + offset, Quaternion.identity);
-                BulletScript bulletScript = bullet.GetComponent<BulletScript>();
+                bullet = Instantiate(bulletPrefab[0], firePoint.position + offset, Quaternion.identity);
+                bulletScript = bullet.GetComponent<BulletScript>();
                 bulletScript.SetDirection(facingRight ? Vector2.right : Vector2.left, bulletSpeed);
                 bulletScript.SetScreenLimits(minX, maxX, minY, maxY); // <-- NUEVO
             }
+
+            if (nivel == 2)
+            {
+                bullet = Instantiate(bulletPrefab[1], firePoint.position + offset, Quaternion.identity);
+                bulletScript = bullet.GetComponent<BulletScript>();
+                bulletScript.SetDirection(facingRight ? Vector2.right : Vector2.left, bulletSpeed);
+                bulletScript.SetScreenLimits(minX, maxX, minY, maxY); // <-- NUEVO
+            }
+            
         }
     }
 
     public void RecibirDaño ( int daño )
     {
+        audioSource.PlayOneShot(audioDaño);
         GameManager.Instance.RestarVida(daño);
         nivel--;
     }
 
 
-    void Morir ()
-    {
-        Debug.Log("Enemigo muerto");
-        Destroy(gameObject);
-    }
+    //void Morir ()
+    //{
+    //    Debug.Log("Enemigo muerto");
+    //    Destroy(gameObject);
+    //}
 
     // -------- AQUÍ VA LO NUEVO ---------
 
@@ -177,15 +187,36 @@ public class PlayerController : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Powerup"))
         {
+            audioSource.PlayOneShot(audioPoweup);
             Destroy(other.gameObject);
             nivel++;
+            if (nivel < playerPrefabs.Length)
+            {
+                CambiarPrefab(nivel);
+            }
+            else
+            {
+                Debug.Log("No hay más niveles de prefab.");
+            }
             Debug.Log("PowerUp recogido. Nivel actual: " + nivel);
         }
-        else if (other.gameObject.CompareTag("ObstacleDañino"))
+        else if (other.gameObject.CompareTag("ObstacleDamage"))
         {
             GameManager.Instance.RestarVida(1);  // o la cantidad de daño que quieras
             Debug.Log("Jugador golpeado por obstáculo dañino");
         }
     }
+
+    void CambiarPrefab ( int nuevoNivel )
+    {
+        Vector3 posicionActual = transform.position;
+        Quaternion rotacionActual = transform.rotation;
+
+        Destroy(gameObject);
+        Debug.Log("Cambiando prefab a nivel: " + nuevoNivel);
+
+        Instantiate(playerPrefabs[nuevoNivel], posicionActual, rotacionActual);
+    }
+
 
 }

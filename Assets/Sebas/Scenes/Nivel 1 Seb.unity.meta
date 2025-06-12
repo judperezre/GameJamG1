@@ -1,9 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 <<<<<<<< HEAD:Assets/Scenes/Nivel 1 Seb.unity.meta
 guid: 2f43083150ebb89489d68feacf93b6e5
 ========
 guid: 1079bbaf41ef49c459daccd664d93fab
 >>>>>>>> origin/enemyDev:Assets/Scenes/EnemyScene.unity.meta
+=======
+guid: 2f43083150ebb89489d68feacf93b6e5
+>>>>>>> Sebas-Dev
 DefaultImporter:
   externalObjects: {}
   userData: 

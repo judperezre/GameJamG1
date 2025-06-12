@@ -6,6 +6,12 @@ TagManager:
   tags:
   - Enemy
   - Limiter
+  - Background
+  - Ground
+  - Obstacle
+  - Powerup
+  - ObstacleDamage
+  - Bullet
   layers:
   - Default
   - TransparentFX
@@ -13,7 +19,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Jugador
   - 
   - 
   - 
@@ -42,4 +48,31 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Sky
+    uniqueID: 817093349
+    locked: 0
+  - name: Mountain
+    uniqueID: 2098064959
+    locked: 0
+  - name: Ground
+    uniqueID: 2474444185
+    locked: 0
+  - name: Player
+    uniqueID: 3397612305
+    locked: 0
+  - name: Obstacles
+    uniqueID: 3649885587
+    locked: 0
+  - name: ObstacleDamage
+    uniqueID: 2476672615
+    locked: 0
+  - name: Enemy
+    uniqueID: 921098107
+    locked: 0
+  - name: Powerup
+    uniqueID: 3063158209
+    locked: 0
+  - name: Bullet
+    uniqueID: 402804349
     locked: 0

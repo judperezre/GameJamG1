@@ -22,7 +22,6 @@ public class BulletScript : MonoBehaviour
     void Start ()
     {
         Destroy(gameObject, lifetime);
-        gameManager = GameObject.Find("Game Manager");
     }
 
     public void SetDirection ( Vector2 dir, float spd )
@@ -60,7 +59,7 @@ public class BulletScript : MonoBehaviour
         {
             Destroy(gameObject);
             collision.GetComponent<Enemy>().RecibirDaño(daño);
-            gameManager.GetComponent<GameManager>().SumarPuntaje(puntos);
+            GameManager.Instance.SumarPuntaje(puntos);
             Debug.Log("Enemigo golpeado, puntos sumados: " + puntos);
             Debug.Log("Enemigo golpeado, daño infligido: " + daño);
         }

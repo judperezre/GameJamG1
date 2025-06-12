@@ -14,7 +14,7 @@ public class EnemyScript : MonoBehaviour
     void Start()
     {
         enemyRb = GetComponent<Rigidbody2D>();
-        player = GameObject.Find("Player");
+        player = GameObject.FindWithTag("Player");
         StartCoroutine(FireProjectile());
         
     }

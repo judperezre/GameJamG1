@@ -1,6 +1,7 @@
 using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
@@ -9,6 +10,9 @@ public class GameManager : MonoBehaviour
     private GameObject player;
     public GameObject gameOverPanel;
     public GameObject startPanel;
+    private AudioSource audioSource;
+
+    [SerializeField] private AudioClip audioGameOver;
 
     [Header("UI")]
     public TextMeshProUGUI vidaText;
@@ -34,6 +38,7 @@ public class GameManager : MonoBehaviour
 
     private void Start ()
     {
+        audioSource = GetComponent<AudioSource>();
         vidaActual = vidaInicial;
         puntajeActual = 0;
         ActualizarUI();
@@ -47,6 +52,7 @@ public class GameManager : MonoBehaviour
         if (vidaActual <= 0)
         {
             vidaActual = 0;
+            audioSource.PlayOneShot(audioGameOver);
             GameOver();
         }
         ActualizarUI();
