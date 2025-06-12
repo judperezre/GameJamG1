@@ -4,12 +4,8 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Ground
-  - Background
   - Enemy
-  - Obstacle
-  - Bullet
-  - Powerup
+  - Limiter
   layers:
   - Default
   - TransparentFX
@@ -17,13 +13,13 @@ TagManager:
   - 
   - Water
   - UI
-  - Background
-  - Ground
-  - Player
-  - Obstacle
-  - Enemy
-  - Bullet
-  - Powerup
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
   - 
   - 
   - 
@@ -46,25 +42,4 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: Background
-    uniqueID: 2957790771
-    locked: 0
-  - name: Ground
-    uniqueID: 3292986861
-    locked: 0
-  - name: Obstacle
-    uniqueID: 2025518537
-    locked: 0
-  - name: Enemy
-    uniqueID: 2881677505
-    locked: 0
-  - name: Player
-    uniqueID: 4168754975
-    locked: 0
-  - name: Powerup
-    uniqueID: 36187769
-    locked: 0
-  - name: Bullet
-    uniqueID: 3793657413
     locked: 0
