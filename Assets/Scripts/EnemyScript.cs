@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class EnemyScript : MonoBehaviour
 {
+    [Header("For follow the player")]
     [SerializeField] float speed = 5.0f;
     private Rigidbody2D enemyRb;
     private GameObject player;
@@ -34,4 +36,6 @@ public class EnemyScript : MonoBehaviour
         
         }
     }
+
+
 }
