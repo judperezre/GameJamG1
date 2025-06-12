@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    [Header("Vida")]
-    [SerializeField] private int vida = 3;
+
+
+    [Header("Nivel")]
+    [SerializeField] private int nivel = 1;
 
     [Header("Movimiento")]
     [SerializeField] private float speed = 5f;
@@ -16,10 +18,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float lowJumpMultiplier = 2f;
 
     [Header("Disparo")]
-    [SerializeField] private GameObject bulletPrefab;
+    [SerializeField] public GameObject[] bulletPrefab;
     [SerializeField] private Transform firePoint;
-    [SerializeField] private float bulletSpeed = 10f;
-    [SerializeField] private float fireCooldown = 0.3f;
+    [SerializeField] private float bulletSpeed;
+    [SerializeField] private float fireCooldown;
     [SerializeField] private float offsetBullet = 0.5f;
 
     [Header("Audio")]
@@ -28,6 +30,9 @@ public class PlayerController : MonoBehaviour
 
     [Header("Limite de Pantalla")]
     [SerializeField] private float minX, maxX, minY, maxY;
+
+    [Header("Powerup")]
+    [SerializeField] private GameObject powerup;
 
     private AudioSource audioSource;
     private Rigidbody2D rb;
@@ -38,6 +43,7 @@ public class PlayerController : MonoBehaviour
 
     void Start ()
     {
+        powerup = GameObject.Find("Powerup");
         audioSource = GetComponent<AudioSource>();
         rb = GetComponent<Rigidbody2D>();
         rb.interpolation = RigidbodyInterpolation2D.Interpolate;
@@ -78,11 +84,22 @@ public class PlayerController : MonoBehaviour
 
     void Saltar ()
     {
-        if (Input.GetKeyDown(KeyCode.W) && isGrounded)
-        {
-            audioSource.PlayOneShot(audioJump);
-            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
-            Debug.Log("Salto realizado");
+        if(nivel == 1) {
+            if (Input.GetKeyDown(KeyCode.W) && isGrounded)
+            {
+                Debug.Log("Salto detectado");
+                audioSource.PlayOneShot(audioJump);
+                rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+                Debug.Log("Salto realizado");
+            }
+        }
+        if (nivel == 2) {
+            if (Input.GetKeyDown(KeyCode.W))
+            {
+                audioSource.PlayOneShot(audioJump);
+                rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+                Debug.Log("Salto realizado");
+            }
         }
     }
 
@@ -100,26 +117,37 @@ public class PlayerController : MonoBehaviour
 
     void Disparar ()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && fireCooldownTimer <= 0f)
+        Vector3 offset = facingRight ? Vector3.right * offsetBullet : Vector3.left * offsetBullet;
+        if (nivel == 1) {
+            if (Input.GetKeyDown(KeyCode.Space) && fireCooldownTimer <= 0f)
+            {
+                audioSource.PlayOneShot(audioDisparo);
+                GameObject bullet = Instantiate(bulletPrefab[0], firePoint.position + offset, Quaternion.identity);
+                BulletScript bulletScript = bullet.GetComponent<BulletScript>();
+                bulletScript.SetDirection(facingRight ? Vector2.right : Vector2.left, bulletSpeed);
+                bulletScript.SetScreenLimits(minX, maxX, minY, maxY); // <-- NUEVO
+            }
+        }
+
+        if (nivel == 2)
         {
-            audioSource.PlayOneShot(audioDisparo);
-            Vector3 offset = facingRight ? Vector3.right * offsetBullet : Vector3.left * offsetBullet;
-            GameObject bullet = Instantiate(bulletPrefab, firePoint.position + offset, Quaternion.identity);
-            bullet.GetComponent<BulletScript>().SetDirection(facingRight ? Vector2.right : Vector2.left, bulletSpeed);
-            Debug.Log("Disparo realizado");
-            fireCooldownTimer = fireCooldown;
+            if (Input.GetKeyDown(KeyCode.Space) && fireCooldownTimer <= 0f)
+            {
+                audioSource.PlayOneShot(audioDisparo);
+                GameObject bullet = Instantiate(bulletPrefab[1], firePoint.position + offset, Quaternion.identity);
+                BulletScript bulletScript = bullet.GetComponent<BulletScript>();
+                bulletScript.SetDirection(facingRight ? Vector2.right : Vector2.left, bulletSpeed);
+                bulletScript.SetScreenLimits(minX, maxX, minY, maxY); // <-- NUEVO
+            }
         }
     }
 
     public void RecibirDaño ( int daño )
     {
-        vida -= daño;
-        Debug.Log("Vida restante: " + vida);
-        if (vida <= 0)
-        {
-            Morir();
-        }
+        GameManager.Instance.RestarVida(daño);
+        nivel--;
     }
+
 
     void Morir ()
     {
@@ -144,4 +172,20 @@ public class PlayerController : MonoBehaviour
             isGrounded = false;
         }
     }
+
+    private void OnTriggerEnter2D ( Collider2D other )
+    {
+        if (other.gameObject.CompareTag("Powerup"))
+        {
+            Destroy(other.gameObject);
+            nivel++;
+            Debug.Log("PowerUp recogido. Nivel actual: " + nivel);
+        }
+        else if (other.gameObject.CompareTag("ObstacleDañino"))
+        {
+            GameManager.Instance.RestarVida(1);  // o la cantidad de daño que quieras
+            Debug.Log("Jugador golpeado por obstáculo dañino");
+        }
+    }
+
 }

@@ -4,6 +4,8 @@ public class Enemy : MonoBehaviour
 {
     [Header("Vida")]
     [SerializeField] private int vida = 3;
+    [SerializeField] private int nivel;
+    [SerializeField] private int daño;
 
     [Header("Patrulla")]
     [SerializeField] private float velocidad = 2f;
@@ -23,7 +25,10 @@ public class Enemy : MonoBehaviour
 
     void FixedUpdate ()
     {
-        Patrullar();
+        if(nivel == 1)
+        {
+            Patrullar();
+        }
     }
 
     void Patrullar ()
@@ -50,7 +55,6 @@ public class Enemy : MonoBehaviour
     public void RecibirDaño ( int daño )
     {
         vida -= daño;
-        Debug.Log("Vida restante: " + vida);
         if (vida <= 0)
         {
             Morir();
@@ -62,4 +66,14 @@ public class Enemy : MonoBehaviour
         Debug.Log("Enemigo muerto");
         Destroy(gameObject);
     }
+
+    private void OnTriggerEnter2D ( Collider2D collision )
+    {
+        if (collision.CompareTag("Player"))
+        {
+            GameManager.Instance.RestarVida(daño);  // <-- Así accedemos correctamente
+            Debug.Log("Jugador golpeado por enemigo");
+        }
+    }
+
 }

@@ -165,6 +165,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vida: 3
+  nivel: 1
   velocidad: 2
   puntoA: {fileID: 0}
   puntoB: {fileID: 0}
