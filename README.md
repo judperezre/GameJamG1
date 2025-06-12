@@ -9,7 +9,7 @@ IE’s Revenge es un videojuego de acción y aventura en 2D donde el protagonist
 Tu misión: llegar hasta las oficinas de Google enfrentándote a enemigos digitales, bugs con forma de enemigos, extensiones rotas y sistemas corruptos. Todo con el objetivo de derrotar a Gemini, el asistente de Chrome, y al mismísimo Chrome en una batalla final épica.
 
 ✨ Características
-🎮 Gameplay de plataformas retro en 2D.
+🎮 Gameplay de plataformas en 2D.
 
 🧠 Historia con sátira digital y momentos cómicos.
 
