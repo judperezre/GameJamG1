@@ -64,6 +64,7 @@ public class PlayerController : MonoBehaviour
         MejorarSalto();
         Disparar();
         fireCooldownTimer -= Time.deltaTime;
+        Debug.Log("Nivel " + nivel);
     }
 
     void LateUpdate ()
@@ -101,7 +102,16 @@ public class PlayerController : MonoBehaviour
             }
         }
         if (nivel == 2) {
-            if (Input.GetKeyDown(KeyCode.W))
+            if (Input.GetKeyDown(KeyCode.W) && isGrounded)
+            {
+                audioSource.PlayOneShot(audioJump);
+                rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+                Debug.Log("Salto realizado");
+            }
+        }
+        else
+        {
+            if (Input.GetKeyDown(KeyCode.W) && isGrounded)
             {
                 audioSource.PlayOneShot(audioJump);
                 rb.velocity = new Vector2(rb.velocity.x, jumpForce);
@@ -140,7 +150,7 @@ public class PlayerController : MonoBehaviour
                 bulletScript.SetScreenLimits(minX, maxX, minY, maxY); // <-- NUEVO
             }
 
-            if (nivel == 2)
+            if (nivel >= 2)
             {
                 bullet = Instantiate(bulletPrefab[1], firePoint.position + offset, Quaternion.identity);
                 bulletScript = bullet.GetComponent<BulletScript>();
@@ -157,6 +167,7 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("Obstacle"))
         {
             isGrounded = true;
+            Debug.Log("hace colision con el suelo " + isGrounded);
         }
     }
 
@@ -165,6 +176,7 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("Obstacle"))
         {
             isGrounded = false;
+            Debug.Log("sale de la colision " + isGrounded);
         }
     }
 

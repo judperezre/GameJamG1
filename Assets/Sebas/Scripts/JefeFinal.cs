@@ -11,13 +11,12 @@ public class JefeFinal : MonoBehaviour
     public LayerMask capaJugador;
     public Transform transformJugador;
     public float velocidadMovimiento;
+    public float distanciaMaxima;
+    public Vector3 puntoInicial;
+    public EstadosMovimientos estadoActual;
     [SerializeField] private int vida = 100;
     [SerializeField] private int daño;
 
-
-
-
-    /*Seccion Cambio*/
     public static GameManager Instance;
 
     [Header("UIJefe")]
@@ -28,93 +27,69 @@ public class JefeFinal : MonoBehaviour
     public int vidaJefeInicial = 100;
     private int vidaJefeActual;
 
-    public Vector3 puntoInicial;
-    public float distanciaMaxima;
-    public EstadosMovimiento estadoActual;
-    public enum EstadosMovimiento
+    public enum EstadosMovimientos
     {
         Esperando,
         Siguiendo,
-        Volviendo,
+        Volviendo
     }
 
     private void Start ()
     {
         puntoInicial = transform.position;
     }
-
-
-    //[Header("Limite de Pantalla")]
-    //[SerializeField] private float minX, maxX, minY, maxY;
     // Start is called before the first frame update
 
-    //void LateUpdate ()
-    //{
-    //    LimitarPosicion();
-    //}
-    //void LimitarPosicion ()
-    //{
-    //    Vector3 clampedPosition = transform.position;
-    //    clampedPosition.x = Mathf.Clamp(transform.position.x, minX, maxX);
-    //    clampedPosition.y = Mathf.Clamp(transform.position.y, minY, maxY);
-    //    transform.position = clampedPosition;
-    //}
-
-
-    /*Seccion Cambio*/
-
-    private void Update()
+    private void Update ()
     {
-        /*CAMBIO*/
         switch (estadoActual)
         {
-            case EstadosMovimiento.Esperando:
+            case EstadosMovimientos.Esperando:
                 EstadoEsperando();
                 break;
-            case EstadosMovimiento.Siguiendo:
+            case EstadosMovimientos.Siguiendo:
                 EstadoSiguiendo();
                 break;
-            case EstadosMovimiento.Volviendo:
+            case EstadosMovimientos.Volviendo:
+                EstadoVolviendo();
+                break;
+            default:
                 break;
         }
-        /*CAMBIO*/
-
     }
-
     private void EstadoEsperando ()
     {
-        Collider2D jugadorCollider = Physics2D.OverlapCircle(transformJugador.position, radioBuscar, capaJugador);
+        Collider2D jugadorCollider = Physics2D.OverlapCircle(transform.position, radioBuscar, capaJugador);
 
         if (jugadorCollider)
         {
             transformJugador = jugadorCollider.transform;
-
-            estadoActual = EstadosMovimiento.Siguiendo;
         }
-
+        estadoActual = EstadosMovimientos.Siguiendo;
     }
-
 
     private void EstadoSiguiendo ()
     {
-        if(transformJugador == null)
+        if (transformJugador == null)
         {
-            estadoActual = EstadosMovimiento.Volviendo;
-            panelJefe.SetActive(false);
+            estadoActual = EstadosMovimientos.Volviendo;
+            return;
         }
-
         transform.position = Vector2.MoveTowards(transform.position, transformJugador.position, velocidadMovimiento * Time.deltaTime);
-
-        if(Vector2.Distance(transform.position, puntoInicial) < distanciaMaxima || 
-           Vector2.Distance(transform.position, transformJugador.position) > distanciaMaxima)
+        if (Vector2.Distance(transform.position, puntoInicial) > distanciaMaxima || Vector2.Distance(transform.position, transformJugador.position) > distanciaMaxima)
         {
-            panelJefe.SetActive(true);
-            estadoActual = EstadosMovimiento.Volviendo;
+            estadoActual = EstadosMovimientos.Volviendo;
             transformJugador = null;
         }
     }
-
-
+    private void EstadoVolviendo ()
+    {
+        transform.position = Vector2.MoveTowards(transform.position, puntoInicial, velocidadMovimiento * Time.deltaTime);
+        if (Vector2.Distance(transform.position, puntoInicial) < 0.1f)
+        {
+            estadoActual = EstadosMovimientos.Esperando;
+        }
+    }
 
     public void RecibirDaño ( int daño )
     {
@@ -127,6 +102,14 @@ public class JefeFinal : MonoBehaviour
         ActualizarUIJefe();
     }
 
+    void Morir ()
+    {
+        Debug.Log("JEFE muerto");
+        Destroy(gameObject);
+        GameManager.Instance.WinGame();
+
+    }
+
 
     private void ActualizarUIJefe ()
     {
@@ -134,26 +117,10 @@ public class JefeFinal : MonoBehaviour
     }
 
 
-    void Morir ()
-    {
-        Debug.Log("JEFE muerto");
-        Destroy(gameObject);
-        GameManager.Instance.WinGame();
-    }
-
-    private void OnDrawGizmos()
+    private void OnDrawGizmos ()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, radioBuscar);
         Gizmos.DrawWireSphere(puntoInicial, distanciaMaxima);
-    }
-
-    private void OnCollisionEnter2D ( Collision2D collision )
-    {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            GameManager.Instance.RestarVida(daño);  // <-- Así accedemos correctamente
-            Debug.Log("Jugador golpeado por Jefe");
-        }
     }
 }

@@ -95,7 +95,7 @@ public class GameManager : MonoBehaviour
     {
 
         audioSource.Pause();
-        StartCoroutine(EsperarGameOver());
+        StartCoroutine(EsperarWin());
         audioSource.PlayOneShot(audioWin);
 
         Time.timeScale = 0f; // Asegurarse de que el tiempo esté corriendo
@@ -105,15 +105,15 @@ public class GameManager : MonoBehaviour
 
     IEnumerator EsperarGameOver ()
     {
-        winPanel.SetActive(true);
+        gameOverPanel.SetActive(true);
         yield return new WaitForSeconds(2);
     }
 
-    IEnumerator EsperarYReiniciarJuego ()
+    IEnumerator EsperarWin ()
     {
+        winPanel.SetActive(true);
         yield return new WaitForSeconds(2);
-        ReiniciarJuego();
-    }
+    }   
 
     public void IniciarJuego ()
     {
