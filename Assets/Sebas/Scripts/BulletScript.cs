@@ -63,11 +63,11 @@ public class BulletScript : MonoBehaviour
             Debug.Log("Enemigo golpeado, puntos sumados: " + puntos);
             Debug.Log("Enemigo golpeado, daño infligido: " + daño);
         }
-        else if (collision.CompareTag("Player"))
-        {
-            GameManager.Instance.RestarVida(daño);
-            Destroy(gameObject);
-        }
+        //else if (collision.CompareTag("Player"))
+        //{
+        //    GameManager.Instance.RestarVida(daño);
+        //    Destroy(gameObject);
+        //}
 
         else if (collision.CompareTag("Obstacle"))
         {

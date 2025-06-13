@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     private AudioSource audioSource;
 
     [SerializeField] private AudioClip audioGameOver;
+    [SerializeField] private AudioClip audioDaño;
 
     [Header("UI")]
     public TextMeshProUGUI vidaText;
@@ -48,6 +49,7 @@ public class GameManager : MonoBehaviour
     {
         vidaActual -= cantidad;
 
+        audioSource.PlayOneShot(audioDaño);
         Debug.Log("Jugador recibió daño. Nivel actual: " + vidaActual);
         if (vidaActual <= 0)
         {

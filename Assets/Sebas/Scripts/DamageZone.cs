@@ -8,19 +8,26 @@ public class DamageZone : MonoBehaviour
     [SerializeField] private int daño = 1;
     [SerializeField] private bool dañoContinuo = false;
     [SerializeField] private float tiempoEntreDaños = 1.0f;
+    [SerializeField] private AudioSource audioSource; // Para reproducir sonido de daño si es necesario
+    [SerializeField] private AudioClip audioDaño;
 
     private float timer = 0f;
     private bool jugadorDentro = false;
+
+    private void Start ()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
 
     // 2. Trigger enter
     private void OnTriggerEnter2D ( Collider2D other )
     {
         if (other.CompareTag("Player"))
         {
-            // Daño instantáneo al entrar
-            other.GetComponent<PlayerController>().RecibirDaño(daño);
+            GameManager.Instance.RestarVida(daño);
             jugadorDentro = true;
             timer = tiempoEntreDaños; // resetea el timer para daño continuo
+            Destroy(gameObject);
         }
     }
 
@@ -42,8 +49,7 @@ public class DamageZone : MonoBehaviour
 
             if (timer <= 0f)
             {
-                GameObject player = GameObject.FindGameObjectWithTag("Player");
-                player.GetComponent<PlayerController>().RecibirDaño(daño);
+                GameManager.Instance.RestarVida(daño);
                 timer = tiempoEntreDaños; // reinicia el cooldown
             }
         }
