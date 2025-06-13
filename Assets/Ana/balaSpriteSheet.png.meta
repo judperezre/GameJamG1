@@ -1,0 +1,881 @@
+fileFormatVersion: 2
+guid: bdcb59d984fd76f4a8dd09d939d9d520
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2372049650938352551
+    second: balaSpriteSheet_0
+  - first:
+      213: 915641370540713607
+    second: balaSpriteSheet_1
+  - first:
+      213: -194358511062886495
+    second: balaSpriteSheet_2
+  - first:
+      213: 2336310168473410069
+    second: balaSpriteSheet_3
+  - first:
+      213: 8684645414811835038
+    second: balaSpriteSheet_4
+  - first:
+      213: -196946709719687235
+    second: balaSpriteSheet_5
+  - first:
+      213: -6479691046405859461
+    second: balaSpriteSheet_6
+  - first:
+      213: 7079336407105288684
+    second: balaSpriteSheet_7
+  - first:
+      213: -1374983615169674164
+    second: balaSpriteSheet_8
+  - first:
+      213: -8430593768863290862
+    second: balaSpriteSheet_9
+  - first:
+      213: -7793497903695334823
+    second: balaSpriteSheet_10
+  - first:
+      213: -7279603468935336744
+    second: balaSpriteSheet_11
+  - first:
+      213: 1963516424847969125
+    second: balaSpriteSheet_12
+  - first:
+      213: -1094645714028651843
+    second: balaSpriteSheet_13
+  - first:
+      213: -5480240500117979696
+    second: balaSpriteSheet_14
+  - first:
+      213: 3851486636629908366
+    second: balaSpriteSheet_15
+  - first:
+      213: 8585367501826295869
+    second: balaSpriteSheet_16
+  - first:
+      213: -1032062396178771608
+    second: balaSpriteSheet_17
+  - first:
+      213: 6989933058111340145
+    second: balaSpriteSheet_18
+  - first:
+      213: 3546057327739898944
+    second: balaSpriteSheet_19
+  - first:
+      213: -6547627583772704273
+    second: balaSpriteSheet_20
+  - first:
+      213: 4667577591318029596
+    second: balaSpriteSheet_21
+  - first:
+      213: 3360305694838788438
+    second: balaSpriteSheet_22
+  - first:
+      213: 1259237384002196720
+    second: balaSpriteSheet_23
+  - first:
+      213: -3461994392944579528
+    second: balaSpriteSheet_24
+  - first:
+      213: -2274289217472267604
+    second: balaSpriteSheet_25
+  - first:
+      213: 8358395344645637888
+    second: balaSpriteSheet_26
+  - first:
+      213: 1436067975249481339
+    second: balaSpriteSheet_27
+  - first:
+      213: -4153943680160500675
+    second: balaSpriteSheet_28
+  - first:
+      213: 5863457166036861870
+    second: balaSpriteSheet_29
+  - first:
+      213: 85487403332619856
+    second: balaSpriteSheet_30
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: balaSpriteSheet_0
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 248
+        width: 45
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8906b3da05f002f4a9de07ff28ac15cc
+      internalID: -1867876440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balaSpriteSheet_1
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 247
+        width: 47
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c47bdef1dcb82414c8b703770ca7a04d
+      internalID: -34679587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balaSpriteSheet_2
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 247
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c78e38e0fb573e4c899b71212d9bfaa
+      internalID: 2117725431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balaSpriteSheet_3
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 247
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4684f80e8856a954d879575b01e486c5
+      internalID: -1246138243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balaSpriteSheet_4
+      rect:
+        serializedVersion: 2
+        x: 249
+        y: 247
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01ef81d3070b9aa48be20690c6121dab
+      internalID: -486110508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balaSpriteSheet_5
+      rect:
+        serializedVersion: 2
+        x: 309
+        y: 247
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ddc2ccacd40c38547842cace4a1caeaf
+      internalID: -1685118557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balaSpriteSheet_6
+      rect:
+        serializedVersion: 2
+        x: 369
+        y: 247
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35307963f9131a74595c49b01b803e9f
+      internalID: 2000564424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balaSpriteSheet_7
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 187
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9621698b6b6a9bf41bbea9994959132f
+      internalID: 91747882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balaSpriteSheet_8
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 187
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 410549ec979dba943bf912196158dba3
+      internalID: 1722368372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balaSpriteSheet_9
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 187
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47140af4ac5545d47879843dd25c935a
+      internalID: 2109882928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balaSpriteSheet_10
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 187
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7cb50b2fc9e150941b9a929b66dc1f25
+      internalID: 1402239748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balaSpriteSheet_11
+      rect:
+        serializedVersion: 2
+        x: 249
+        y: 187
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8abb23f3bd84c940844604ff3018909
+      internalID: 232890703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balaSpriteSheet_12
+      rect:
+        serializedVersion: 2
+        x: 309
+        y: 187
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a14f4be709993f545a481844eeec71a7
+      internalID: -6297827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balaSpriteSheet_13
+      rect:
+        serializedVersion: 2
+        x: 369
+        y: 187
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d23581174b8b6e4fb8e6edab81766c4
+      internalID: 1311179558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balaSpriteSheet_14
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 127
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c8c6b7703502e948b2610d6a1127adb
+      internalID: 1045514268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balaSpriteSheet_15
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 127
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02a5da767fffc6b46b359a03d8e9fa69
+      internalID: -1221049420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balaSpriteSheet_16
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 127
+        width: 48
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd593937d0e248d42bbba7fe42806c8c
+      internalID: -1287689764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balaSpriteSheet_17
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 127
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8c4900ff89c4fa4bb19cfffa9da75b2
+      internalID: -700744100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balaSpriteSheet_18
+      rect:
+        serializedVersion: 2
+        x: 249
+        y: 127
+        width: 48
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f232c063435a1e41a058f819ef70cc5
+      internalID: -1322983631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balaSpriteSheet_19
+      rect:
+        serializedVersion: 2
+        x: 309
+        y: 127
+        width: 48
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c049f2d3bd4c6bc42b6643888d08e5fe
+      internalID: 1308191949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balaSpriteSheet_20
+      rect:
+        serializedVersion: 2
+        x: 369
+        y: 127
+        width: 48
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1045c504d3d71eb41aff94faafe2c848
+      internalID: 722929255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balaSpriteSheet_21
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 67
+        width: 48
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f03c555b6dba1d42a68e1d96195450c
+      internalID: 1850972250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balaSpriteSheet_22
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 67
+        width: 48
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8570ecf176f2e4247a5469039989a58c
+      internalID: 1750062269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balaSpriteSheet_23
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 67
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e497329c6c892247a8885c98843d930
+      internalID: 240140639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balaSpriteSheet_24
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 67
+        width: 48
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04c64cb86c21ce84ea0acb029792a70a
+      internalID: -370350695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balaSpriteSheet_25
+      rect:
+        serializedVersion: 2
+        x: 249
+        y: 67
+        width: 48
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0594e887e3a539548bc4b0c708d965a4
+      internalID: -2009940330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balaSpriteSheet_26
+      rect:
+        serializedVersion: 2
+        x: 309
+        y: 67
+        width: 48
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31882148442c9f544865cdc8a0baf558
+      internalID: 1163379965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balaSpriteSheet_27
+      rect:
+        serializedVersion: 2
+        x: 369
+        y: 67
+        width: 48
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 438988e619a968243a3395a732b91ff3
+      internalID: 1784561225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balaSpriteSheet_28
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 7
+        width: 48
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f9a03ff73be1b54ba0d64dce8d33e23
+      internalID: 1068711560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balaSpriteSheet_29
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 7
+        width: 48
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46b9f18d47e338847a47598d5e4648a9
+      internalID: -1402183938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: cd03cf567115ee64286dd6141e2b71cb
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      balaSpriteSheet_0: -1867876440
+      balaSpriteSheet_1: -34679587
+      balaSpriteSheet_10: 1402239748
+      balaSpriteSheet_11: 232890703
+      balaSpriteSheet_12: -6297827
+      balaSpriteSheet_13: 1311179558
+      balaSpriteSheet_14: 1045514268
+      balaSpriteSheet_15: -1221049420
+      balaSpriteSheet_16: -1287689764
+      balaSpriteSheet_17: -700744100
+      balaSpriteSheet_18: -1322983631
+      balaSpriteSheet_19: 1308191949
+      balaSpriteSheet_2: 2117725431
+      balaSpriteSheet_20: 722929255
+      balaSpriteSheet_21: 1850972250
+      balaSpriteSheet_22: 1750062269
+      balaSpriteSheet_23: 240140639
+      balaSpriteSheet_24: -370350695
+      balaSpriteSheet_25: -2009940330
+      balaSpriteSheet_26: 1163379965
+      balaSpriteSheet_27: 1784561225
+      balaSpriteSheet_28: 1068711560
+      balaSpriteSheet_29: -1402183938
+      balaSpriteSheet_3: -1246138243
+      balaSpriteSheet_30: -805943371
+      balaSpriteSheet_4: -486110508
+      balaSpriteSheet_5: -1685118557
+      balaSpriteSheet_6: 2000564424
+      balaSpriteSheet_7: 91747882
+      balaSpriteSheet_8: 1722368372
+      balaSpriteSheet_9: 2109882928
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

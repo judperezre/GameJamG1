@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: c0b69dd311a13ba478f74e321372ffa9
+guid: a26cac94bdba70b4da0dfa728d84f51a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7430804416941441246
-    second: explorer_0
+      213: 8190745299450570583
+    second: obstaculoRelojArena_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: explorer_0
+      name: obstaculoRelojArena_0
       rect:
         serializedVersion: 2
-        x: 15
-        y: 28
-        width: 477
-        height: 463
+        x: 18
+        y: 2
+        width: 70
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -127,8 +127,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 22f3dccb0ca70e890800000000000000
-      internalID: -7430804416941441246
+      spriteID: 757a373147f5ba170800000000000000
+      internalID: 8190745299450570583
       vertices: []
       indices: 
       edges: []
@@ -143,8 +143,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      explorer_0: -7430804416941441246
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
