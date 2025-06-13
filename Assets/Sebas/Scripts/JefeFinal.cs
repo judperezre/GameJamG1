@@ -117,4 +117,13 @@ public class JefeFinal : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, radioBuscar);
         Gizmos.DrawWireSphere(puntoInicial, distanciaMaxima);
     }
+
+    private void OnCollisionEnter2D ( Collision2D collision )
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            GameManager.Instance.RestarVida(daño);  // <-- Así accedemos correctamente
+            Debug.Log("Jugador golpeado por Jefe");
+        }
+    }
 }
