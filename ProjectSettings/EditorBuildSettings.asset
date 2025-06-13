@@ -4,6 +4,9 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Sebas/Scenes/Nivel 1 Seb.unity
+    guid: 2f43083150ebb89489d68feacf93b6e5
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0

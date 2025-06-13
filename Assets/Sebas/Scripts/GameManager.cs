@@ -67,12 +67,20 @@ public class GameManager : MonoBehaviour
         ActualizarUI();
     }
 
+    public void RestaurarVida ()
+    {
+        vidaActual = vidaInicial;
+        ActualizarUI();
+    }
+
 
     public void SumarPuntaje ( int cantidad )
     {
         puntajeActual += cantidad;
         ActualizarUI();
     }
+
+
 
     private void ActualizarUI ()
     {
@@ -83,9 +91,10 @@ public class GameManager : MonoBehaviour
 
     public void GameOver ()
     {
-        gameOverPanel.SetActive(true);
-        StartCoroutine(EsperarGameOver());
         audioSource.Pause();
+        StartCoroutine(EsperarGameOver());
+        audioSource.PlayOneShot(audioGameOver);
+
         Time.timeScale = 0f; // Asegurarse de que el tiempo esté corriendo
         Debug.Log("Game Over");
         // Aquí puedes poner pantalla de game over, reinicio, etc.
@@ -102,6 +111,15 @@ public class GameManager : MonoBehaviour
         Debug.Log("You Win");
         // Aquí puedes poner pantalla de game over, reinicio, etc.
     }
+
+    public void PauseGame()
+    {
+        audioSource.Pause();
+        startPanel.gameObject.SetActive(true);
+
+        Time.timeScale = 0f; // Asegurarse de que el tiempo esté corriendo
+    }
+
 
     IEnumerator EsperarGameOver ()
     {

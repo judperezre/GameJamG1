@@ -1,9 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
-using TMPro.EditorUtilities;
 using UnityEngine;
-using UnityEngine.Audio;
 
 public class JefeFinal : MonoBehaviour
 {
@@ -23,9 +21,6 @@ public class JefeFinal : MonoBehaviour
     public TextMeshProUGUI vidaJefeText;
     public GameObject panelJefe;
 
-    [Header("Valores del jefe")]
-    public int vidaJefeInicial = 100;
-    private int vidaJefeActual;
 
     public enum EstadosMovimientos
     {
@@ -94,7 +89,6 @@ public class JefeFinal : MonoBehaviour
     public void RecibirDaño ( int daño )
     {
         vida -= daño;
-        Debug.Log("JEFE RECIBIO -" + vida + " DE DAÑO");
         if (vida <= 0)
         {
             Morir();

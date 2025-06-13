@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Video;
 
 public class PlayerController : MonoBehaviour
 {
@@ -63,6 +64,7 @@ public class PlayerController : MonoBehaviour
         Saltar();
         MejorarSalto();
         Disparar();
+        Pausar();
         fireCooldownTimer -= Time.deltaTime;
         Debug.Log("Nivel " + nivel);
     }
@@ -90,6 +92,14 @@ public class PlayerController : MonoBehaviour
             facingRight = false;
     }
 
+    void Pausar ()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            GameManager.Instance.PauseGame();
+        }
+    }
+
     void Saltar ()
     {
         if(nivel == 1) {
@@ -101,8 +111,8 @@ public class PlayerController : MonoBehaviour
                 Debug.Log("Salto realizado");
             }
         }
-        if (nivel == 2) {
-            if (Input.GetKeyDown(KeyCode.W) && isGrounded)
+        if (nivel >= 2) {
+            if (Input.GetKeyDown(KeyCode.W))
             {
                 audioSource.PlayOneShot(audioJump);
                 rb.velocity = new Vector2(rb.velocity.x, jumpForce);
@@ -157,6 +167,7 @@ public class PlayerController : MonoBehaviour
                 bulletScript.SetDirection(facingRight ? Vector2.right : Vector2.left, bulletSpeed);
                 bulletScript.SetScreenLimits(minX, maxX, minY, maxY); // <-- NUEVO
             }
+
             
         }
     }
@@ -187,6 +198,7 @@ public class PlayerController : MonoBehaviour
             audioSource.PlayOneShot(audioPoweup);
             Destroy(other.gameObject);
             nivel++;
+            GameManager.Instance.RestaurarVida();
             if (nivel < 2)
             {
                 CambiarPrefab(nivel);
