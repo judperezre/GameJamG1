@@ -4,16 +4,25 @@ using UnityEngine;
 
 public class ProyectileMovement : MonoBehaviour
 {
-    private float speed = -20.0f;
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private float speed = 5.0f;  // puedes ajustar la velocidad
+    private GameObject player;
+
+    void Start ()
     {
-        
+        player = GameObject.FindWithTag("Player");
     }
 
-    // Update is called once per frame
-    void Update()
+    void Update ()
     {
-        transform.Translate(Vector2.right * speed * Time.deltaTime);
+        Mover();
+    }
+
+    private void Mover ()
+    {
+        if (player != null)
+        {
+            Vector3 direction = (player.transform.position - transform.position).normalized;
+            transform.Translate(direction * speed * Time.deltaTime, Space.World);
+        }
     }
 }

@@ -100,7 +100,7 @@ public class PlayerController : MonoBehaviour
                 Debug.Log("Salto realizado");
             }
         }
-        if (nivel == 2) {
+        if (nivel >= 2) {
             if (Input.GetKeyDown(KeyCode.W))
             {
                 audioSource.PlayOneShot(audioJump);
