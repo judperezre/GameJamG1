@@ -143,7 +143,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      obstaculoDocumento_0: 3957748143408048535
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

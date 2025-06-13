@@ -40,9 +40,11 @@ public class GameManager : MonoBehaviour
     private void Start ()
     {
         audioSource = GetComponent<AudioSource>();
+        audioSource.Pause();
         vidaActual = vidaInicial;
         puntajeActual = 0;
         ActualizarUI();
+        Time.timeScale = 0f; // Asegurarse de que el tiempo esté corriendo
     }
 
     public void RestarVida ( int cantidad )
@@ -95,6 +97,8 @@ public class GameManager : MonoBehaviour
     public void IniciarJuego ()
     {
         startPanel.SetActive(false);
+        audioSource.Play(); // Reproducir música de fondo al iniciar el juego
+        Time.timeScale = 1f; // Asegurarse de que el tiempo esté corriendo  
     }
 
     public void ReiniciarJuego ()

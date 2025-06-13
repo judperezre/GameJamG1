@@ -143,7 +143,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      obstaculoRelojArena_0: 8190745299450570583
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
