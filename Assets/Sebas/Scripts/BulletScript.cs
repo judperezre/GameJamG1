@@ -60,14 +60,13 @@ public class BulletScript : MonoBehaviour
             Destroy(gameObject);
             collision.GetComponent<Enemy>().RecibirDaño(daño);
             GameManager.Instance.SumarPuntaje(puntos);
-            Debug.Log("Enemigo golpeado, puntos sumados: " + puntos);
-            Debug.Log("Enemigo golpeado, daño infligido: " + daño);
         }
-        //else if (collision.CompareTag("Player"))
-        //{
-        //    GameManager.Instance.RestarVida(daño);
-        //    Destroy(gameObject);
-        //}
+        else if (collision.CompareTag("Jefe"))
+        {
+            Destroy(gameObject);
+            collision.GetComponent<JefeFinal>().RecibirDaño(daño);
+            GameManager.Instance.SumarPuntaje(puntos);
+        }
 
         else if (collision.CompareTag("Obstacle"))
         {

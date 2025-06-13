@@ -12,6 +12,7 @@ TagManager:
   - Powerup
   - ObstacleDamage
   - Bullet
+  - Jefe
   layers:
   - Default
   - TransparentFX

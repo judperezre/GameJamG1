@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
 
 
     [Header("Nivel")]
-    [SerializeField] private int nivel = 1;
+    public static int nivel = 1;
 
     [Header("Movimiento")]
     [SerializeField] private float speed = 5f;
@@ -151,21 +151,6 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void RecibirDaño ( int daño )
-    {
-        audioSource.PlayOneShot(audioDaño);
-        GameManager.Instance.RestarVida(daño);
-        nivel--;
-    }
-
-
-    //void Morir ()
-    //{
-    //    Debug.Log("Enemigo muerto");
-    //    Destroy(gameObject);
-    //}
-
-    // -------- AQUÍ VA LO NUEVO ---------
 
     private void OnCollisionEnter2D ( Collision2D collision )
     {
@@ -190,7 +175,7 @@ public class PlayerController : MonoBehaviour
             audioSource.PlayOneShot(audioPoweup);
             Destroy(other.gameObject);
             nivel++;
-            if (nivel < playerPrefabs.Length)
+            if (nivel < 2)
             {
                 CambiarPrefab(nivel);
             }

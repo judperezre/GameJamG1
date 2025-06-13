@@ -139,7 +139,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e08182185f8e88847857c348f28c0f7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  "da\xF1o": 1
+  "da\xF1o": 5
   puntos: 10
 --- !u!50 &6176663175176681870
 Rigidbody2D:
