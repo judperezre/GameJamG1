@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 3119054229678919851}
   m_Layer: 11
   m_Name: Bullet 1
-  m_TagString: Bullet
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -140,6 +140,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   "da\xF1o": 2
   puntos: 20
+  audioDisparo: {fileID: 8300000, guid: 2d6f212c566df6c40b4d7e8a739c5223, type: 3}
 --- !u!50 &5997408132331676459
 Rigidbody2D:
   serializedVersion: 4
