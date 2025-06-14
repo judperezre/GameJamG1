@@ -74,10 +74,10 @@ public class JefeFinal : MonoBehaviour
         // Si ya tenemos referencia al jugador, no buscamos nuevamente
         if (player != null)
         {
-            panelJefe.SetActive(true);
             float distanciaJugador = Vector2.Distance(transform.position, player.transform.position);
             if (distanciaJugador <= radioBuscar)
             {
+                panelJefe.SetActive(true);
                 transformJugador = player.transform;
                 estadoActual = EstadosMovimientos.Siguiendo;
             }
