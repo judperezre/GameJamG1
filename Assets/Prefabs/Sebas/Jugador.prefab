@@ -377,7 +377,9 @@ MonoBehaviour:
   maxX: 150
   minY: -5
   maxY: 10.5
-  playerPrefabs: {fileID: 0}
+  playerPrefabs:
+  - {fileID: 3030267550752528956}
+  - {fileID: 2146144590684810308, guid: 3edb21a0e07e1d74cae02047a3f391f6, type: 3}
   bulletPrefab:
   - {fileID: 1682817359072138565, guid: 5bd7c2bee728a034d86009caa90ee59c, type: 3}
   - {fileID: 8786915965464132853, guid: e69ffbfde6f4df647bfcc258a97a42fd, type: 3}

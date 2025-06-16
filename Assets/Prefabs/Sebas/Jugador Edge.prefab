@@ -262,14 +262,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3cfddaeafc37cf47a95ba1363d2ae45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  respawnPoint: {fileID: 3053102048674731991}
-  speed: 5
-  jumpForce: 12
+  respawnPoint: {fileID: 0}
+  speed: 7
+  jumpForce: 6
   fallMultiplier: 2.5
   lowJumpMultiplier: 2
   firePoint: {fileID: 3053102048674731991}
   bulletSpeed: 10
-  fireCooldown: 0.76
+  fireCooldown: 0.17
   offsetBullet: 0.81
   audioJump: {fileID: 8300000, guid: 01d79f07932c5d84c95dc8c82b90fb27, type: 3}
   audioDisparo: {fileID: 8300000, guid: 2d6f212c566df6c40b4d7e8a739c5223, type: 3}
@@ -279,9 +279,6 @@ MonoBehaviour:
   maxX: 150
   minY: -5
   maxY: 10.5
-  playerPrefabs:
-  - {fileID: 3030267550752528956, guid: f9c4ef633cb2229469c0311d9e70a471, type: 3}
-  - {fileID: 2146144590684810308}
   bulletPrefab:
   - {fileID: 1682817359072138565, guid: 5bd7c2bee728a034d86009caa90ee59c, type: 3}
   - {fileID: 8786915965464132853, guid: e69ffbfde6f4df647bfcc258a97a42fd, type: 3}

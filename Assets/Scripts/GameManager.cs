@@ -21,6 +21,11 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI vidaText;
     public TextMeshProUGUI puntajeText;
 
+    [Header("Prefabs de jugador")]
+    public GameObject[] playerPrefabs;  // Aquí asignas los dos prefabs
+
+    private GameObject currentPlayer;
+    private int nivelActual = 1;
 
     [Header("Valores del jugador")]
     public int vidaInicial = 3;
@@ -29,7 +34,6 @@ public class GameManager : MonoBehaviour
 
     private void Awake ()
     {
-        // Singleton: solo un GameManager en escena
         if (Instance == null)
         {
             Instance = this;
@@ -38,7 +42,10 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        currentPlayer = GameObject.FindWithTag("Player");  // Si existe un player inicial en escena lo asigna
     }
+
 
     private void Start ()
     {
@@ -50,6 +57,45 @@ public class GameManager : MonoBehaviour
         ActualizarUI();
         Time.timeScale = 0f; // Asegurarse de que el tiempo esté corriendo
     }
+    public void IniciarPartida ()
+    {
+        nivelActual = 1;
+
+        if (currentPlayer == null)
+        {
+            Vector3 posicionInicial = new Vector3(-3, 1.76f, 0);
+            InstanciarJugador(posicionInicial);
+        }
+    }
+
+
+    public void SubirNivel ( Vector3 posicionActual )
+    {
+        nivelActual++;
+        InstanciarJugador(posicionActual);
+    }
+
+
+    void InstanciarJugador ( Vector3 posicion )
+    {
+        if (currentPlayer != null)
+        {
+            Destroy(currentPlayer);
+        }
+
+        currentPlayer = Instantiate(playerPrefabs[nivelActual - 1], posicion, Quaternion.identity);
+
+        CameraFollow camera = Camera.main.GetComponent<CameraFollow>();
+        if (camera != null)
+            camera.player = currentPlayer.transform;
+    }
+
+
+    public int GetNivelActual ()
+    {
+        return nivelActual;
+    }
+
 
     public void RestarVida ( int cantidad )
     {
@@ -140,10 +186,11 @@ public class GameManager : MonoBehaviour
 
     public void ReiniciarJuego ()
     {
-        // Reiniciar el juego, por ejemplo, recargando la escena actual
-        Time.timeScale = 1f; // Asegurarse de que el tiempo esté corriendo
+        PlayerController.nivel = 1;  // Reiniciamos el nivel estático
+        Time.timeScale = 1f;
         UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
     }
+
 
     public void Salir ()
     {

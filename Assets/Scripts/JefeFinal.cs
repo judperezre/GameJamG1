@@ -2,151 +2,60 @@ using System.Collections;
 using TMPro;
 using UnityEngine;
 
-public class JefeFinal : MonoBehaviour
+public class JefeFinal : EnemyBase
 {
-    [Header("Movimiento")]
-    [SerializeField] private float radioBuscar;
-    [SerializeField] private LayerMask capaJugador;
-    [SerializeField] private float velocidadMovimiento;
-    [SerializeField] private float distanciaMaxima;
-    private Vector3 puntoInicial;
-    private Transform transformJugador;
-    private GameObject player;
-
-    [Header("Vida y daño")]
-    [SerializeField] private int vida = 100;
-    [SerializeField] private int daño;
-
     [Header("UI Jefe")]
     [SerializeField] private TextMeshProUGUI vidaJefeText;
     [SerializeField] private GameObject panelJefe;
 
-    public EstadosMovimientos estadoActual;
+    [Header("Disparo")]
+    [SerializeField] private GameObject projectilePrefab;
+    private bool isDeath = false;
 
-    public static GameManager Instance;
-
-    public enum EstadosMovimientos
+    protected override void Start ()
     {
-        Esperando,
-        Siguiendo,
-        Volviendo
-    }
-
-    private void Start ()
-    {
-        puntoInicial = transform.position;
-        distanciaMaxima = radioBuscar * 1.5f;
-
-        // Buscamos al jugador al inicio
-        BuscarJugador();
+        base.Start();
+        transform.rotation = Quaternion.Euler(0, 180, 0);
         ActualizarUIJefe();
+        StartCoroutine(FireProjectile());
     }
 
-    private void Update ()
+    protected override void EstadoEsperando ()
     {
-        if (player == null) BuscarJugador();
-
-        switch (estadoActual)
+        base.EstadoEsperando();
+        if (estadoActual == EstadosMovimientos.Siguiendo)
         {
-            case EstadosMovimientos.Esperando:
-                EstadoEsperando();
-                break;
-            case EstadosMovimientos.Siguiendo:
-                EstadoSiguiendo();
-                break;
-            case EstadosMovimientos.Volviendo:
-                EstadoVolviendo();
-                break;
+            panelJefe.SetActive(true);
         }
     }
 
-    private void BuscarJugador ()
+    IEnumerator FireProjectile ()
     {
-        if (PlayerController.Instance != null)
+        while (!isDeath)
         {
-            player = PlayerController.Instance.gameObject;
-            transformJugador = player.transform;
-        }
-    }
-
-    private void EstadoEsperando ()
-    {
-        // Si ya tenemos referencia al jugador, no buscamos nuevamente
-        if (player != null)
-        {
-            float distanciaJugador = Vector2.Distance(transform.position, player.transform.position);
-            if (distanciaJugador <= radioBuscar)
+            if (estadoActual == EstadosMovimientos.Siguiendo)
             {
-                panelJefe.SetActive(true);
-                transformJugador = player.transform;
-                estadoActual = EstadosMovimientos.Siguiendo;
+                Instantiate(projectilePrefab, transform.position, Quaternion.identity);
             }
+            yield return new WaitForSeconds(2f);
         }
     }
 
-    private void EstadoSiguiendo ()
+    protected override void Morir ()
     {
-        if (transformJugador == null)
-        {
-            estadoActual = EstadosMovimientos.Volviendo;
-            return;
-        }
-
-        transform.position = Vector2.MoveTowards(transform.position, transformJugador.position, velocidadMovimiento * Time.deltaTime);
-
-        if (Vector2.Distance(transform.position, puntoInicial) > distanciaMaxima
-            || Vector2.Distance(transform.position, transformJugador.position) > distanciaMaxima)
-        {
-            estadoActual = EstadosMovimientos.Volviendo;
-            transformJugador = null;
-        }
-    }
-
-    private void EstadoVolviendo ()
-    {
-        transform.position = Vector2.MoveTowards(transform.position, puntoInicial, velocidadMovimiento * Time.deltaTime);
-
-        if (Vector2.Distance(transform.position, puntoInicial) < 0.1f)
-        {
-            estadoActual = EstadosMovimientos.Esperando;
-        }
-    }
-
-    public void RecibirDaño ( int dañoRecibido )
-    {
-        vida -= dañoRecibido;
-        if (vida <= 0)
-        {
-            Morir();
-        }
-        ActualizarUIJefe();
-    }
-
-    private void Morir ()
-    {
-        Debug.Log("JEFE muerto");
+        isDeath = true;
         Destroy(gameObject);
         GameManager.Instance.WinGame();
+    }
+
+    public override void RecibirDaño ( int dañoRecibido )
+    {
+        base.RecibirDaño(dañoRecibido);
+        ActualizarUIJefe();
     }
 
     private void ActualizarUIJefe ()
     {
         vidaJefeText.text = "Vida: " + vida.ToString();
-    }
-
-    private void OnCollisionEnter2D ( Collision2D collision )
-    {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            GameManager.Instance.RestarVida(daño);
-            Debug.Log("Jugador golpeado por Jefe");
-        }
-    }
-
-    private void OnDrawGizmos ()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, radioBuscar);
-        Gizmos.DrawWireSphere(puntoInicial, distanciaMaxima);
     }
 }
