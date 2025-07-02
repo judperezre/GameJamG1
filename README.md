@@ -1,7 +1,7 @@
 
 # IE's Revenge 
 
-❞𝑴𝒖𝒄𝒉𝒐𝒔 𝒅𝒊𝒄𝒆𝒏 𝒒𝒖𝒆 𝒔𝒐𝒚 𝒍𝒆𝒏𝒕𝒐...𝒑𝒆𝒓𝒐 𝒍𝒍𝒆𝒈𝒂𝒓𝒆́ 𝒑𝒓𝒊𝒎𝒆𝒓𝒐 𝒂𝒍 𝒄𝒐𝒓𝒂𝒛𝒐́𝒏 𝒅𝒆 𝒍𝒂 𝒓𝒆𝒅❞
+❞𝑴𝒖𝒄𝒉𝒐𝒔 𝒅𝒊𝒄𝒆𝒏 𝒒𝒖𝒆 𝒔𝒐𝒚 𝒍𝒆𝒏𝒕𝒐...𝒑𝒆𝒓𝒐 𝒍𝒍𝒆𝒈𝒂𝒓𝒆́ 𝒑𝒓𝒊𝒎𝒆𝒓𝒐 𝒂𝒍 𝒄𝒐𝒓𝒂𝒛𝒐́𝒏 𝒅𝒆 𝒍𝒂 𝒓𝒆𝒅❞ 
 
 🕹️ Acerca del juego
 IE’s Revenge es un videojuego de acción y aventura en 2D donde el protagonista es nada más y nada menos que Internet Explorer. Harto de años de burlas por su lentitud, cae en un mundo alterno y decide demostrar que todavía puede ser el mejor navegador del mundo... incluso superior a Chrome.
